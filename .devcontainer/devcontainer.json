@@ -4,7 +4,7 @@
 	"name": "Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
+	"service": "devcontainer",
 	"workspaceFolder": "/workspace",
 
 	"features": {
@@ -16,5 +16,5 @@
 		}
 	},
 
-  "forwardPorts": [3000, 5432]
+  	"forwardPorts": [3000, 5432]
 }
