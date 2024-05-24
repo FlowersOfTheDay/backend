@@ -1,5 +1,6 @@
 from . import (
   home,
   health,
-  chat
+  chat,
+  recommend
 )
