@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-python.vscode-pylance",
+    "mtxr.sqltools-driver-pg",
+    "mtxr.sqltools",
+    "ms-python.debugpy"
+  ]
+}
