@@ -31,18 +31,11 @@ model = ChatGPTModel()
 
 @router.post('/chat')
 async def chat(input: InputModel) -> OutputModel:
-  context = input.context
-  name = input.name
-  emotion = input.emotion
-  satisfaction = input.satisfaction
-  language = input.language
-
   return OutputModel(
     output=chain.invoke({
        'input_context': f'''
-                # About Flower
-                * Name: {model.name}
-
+                * 현재까지의 대화: {input.context}
+                * 사용자 입력: {input.chat}
             ''',
         }),
   )
