@@ -15,6 +15,42 @@
 			"version": "16"
 		}
 	},
-
-  	"forwardPorts": [3000, 5432]
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"sqltools.connections": [
+					{
+						"previewLimit": 50,
+						"server": "localhost",
+						"port": 5432,
+						"driver": "PostgreSQL",
+						"name": "dev",
+						"group": "dev",
+						"username": "postgres",
+						"password": "postgres",
+						"database": "postgres"
+					},
+					{
+						"previewLimit": 50,
+						"server": "localhost",
+						"port": 5432,
+						"driver": "PostgreSQL",
+						"name": "dev",
+						"group": "dev",
+						"database": "dev",
+						"username": "postgres",
+						"password": "postgres"
+					}
+				]
+			},
+			"extensions": [
+				"ms-python.python",
+    		"ms-python.debugpy",
+				"ms-python.vscode-pylance",
+    		"mtxr.sqltools-driver-pg",
+    		"mtxr.sqltools"
+			]
+		}
+	},
+  "forwardPorts": [3000, 5432]
 }
