@@ -6,7 +6,6 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspace/backend",
-
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/poetry:2": {
 			"version": "latest"
@@ -15,6 +14,7 @@
 			"version": "16"
 		}
 	},
+	"updateContentCommand": "poetry config virtualenvs.in-project true && poetry config virtualenvs.path \"./.venv\" && poetry install",
 	"customizations": {
 		"vscode": {
 			"settings": { 
