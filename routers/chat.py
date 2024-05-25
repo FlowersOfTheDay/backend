@@ -31,9 +31,18 @@ model = ChatGPTModel()
 
 @router.post('/chat')
 async def chat(input: InputModel) -> OutputModel:
-  chain = build(llm=model.build())
+   context = input.context
+  name = input.name
+  emotion = input.emotion
+  satisfaction = input.satisfaction
+  language = input.language
+
   return OutputModel(
     output=chain.invoke({
-      'input_context': input.chat,
-    })
+       'input_context': f'''
+                # About Flower
+                * Name: {model.name}
+
+            ''',
+        }),
   )
