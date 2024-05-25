@@ -1,7 +1,7 @@
 import dotenv
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from prisma import Prisma
+from utils.prisma import prisma
 
 import routers
 
@@ -10,9 +10,9 @@ dotenv.load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await Prisma.connect()
+    await prisma.connect()
     yield
-    await Prisma.disconnect()
+    await prisma.disconnect()
 
 app = FastAPI(lifespan=lifespan)
 
