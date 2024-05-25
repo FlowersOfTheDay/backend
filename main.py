@@ -1,7 +1,6 @@
 import os
 import dotenv
 from fastapi import FastAPI
-from contextlib import asynccontextmanager
 
 import routers
 
