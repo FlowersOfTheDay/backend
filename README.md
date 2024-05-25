@@ -11,7 +11,7 @@
 이때, 데이터 베이스의 확인을 위하여 vscode의 확장을 사용하였습니다. 따라서 이 repository는 vscode로 개발하는 것을 추천합니다.  
 
 ### Poetry
- 
+
 본 repository는 python 라이브러리의 설정을 위해서 Poetry를 사용하고 있습니다.  
 `poetry install` 을 이용하여 라이브러리 설정을 하시면 됩니다.  
 
