@@ -31,7 +31,7 @@ model = ChatGPTModel()
 
 @router.post('/chat')
 async def chat(input: InputModel) -> OutputModel:
-   context = input.context
+  context = input.context
   name = input.name
   emotion = input.emotion
   satisfaction = input.satisfaction
