@@ -5,7 +5,7 @@ router = APIRouter(
   tags=['home']
 )
 
-@router.get('')
+@router.get('/')
 async def get_root():
   return {
     'name': 'Flowers of the day Backend'

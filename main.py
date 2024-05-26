@@ -7,7 +7,6 @@ import routers
 # loading fron .env file
 dotenv.load_dotenv()
 
-
 app = FastAPI(root_path=os.environ.get('BASE_URL', ''))
 
 # connecting router
