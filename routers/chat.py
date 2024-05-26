@@ -31,6 +31,8 @@ model = ChatGPTModel()
 
 @router.post('/chat')
 async def chat(input: InputModel) -> OutputModel:
+  chain = build(model)
+
   return OutputModel(
     output=chain.invoke({
        'input_context': f'''
