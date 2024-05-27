@@ -30,7 +30,6 @@ FROM "docker.io/library/python:${PYTHON_VERSION}-slim-${PYTHON_DIST}" as runtime
 
 # Configure entrypoint
 ENTRYPOINT ["/usr/bin/env"]
-CMD [ "fastapi", "run", "main.py" ]
 
 # Configure runtime environment variables
 ENV PATH="/app/.venv/bin:${PATH}"
@@ -40,4 +39,5 @@ WORKDIR /app
 COPY --from=builder /app/.venv .venv
 ADD ./ .
 
-RUN prisma db push
+RUN chmod +x ./start.sh
+CMD [ "./start.sh" ]
