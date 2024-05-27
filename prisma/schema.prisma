@@ -7,7 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Flower {
-  id Int @id @default(autoincrement())
-  name String
+enum ChatRole {
+  USER
+  AI
+}
+
+model Log {
+  id    Int    @id @default(autoincrement())
+  model String
+
+  chat Chat[]
+}
+
+model Chat {
+  id   Int      @id @default(autoincrement())
+  role ChatRole
+  text String
+
+  log   Log @relation(fields: [logId], references: [id])
+  logId Int
 }
