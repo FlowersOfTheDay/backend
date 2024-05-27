@@ -39,3 +39,5 @@ ENV PATH="/app/.venv/bin:${PATH}"
 WORKDIR /app
 COPY --from=builder /app/.venv .venv
 ADD ./ .
+
+RUN prisma db push
