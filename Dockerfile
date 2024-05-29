@@ -40,4 +40,4 @@ COPY --from=builder /app/.venv .venv
 ADD ./ .
 
 RUN chmod +x ./start.sh
-CMD [ "./start.sh" ]
+CMD [ "zsh", "./start.sh" ]
