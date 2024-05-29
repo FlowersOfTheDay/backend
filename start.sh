@@ -1,2 +1,8 @@
+if [ "$DATABASE_URL" == "" ]; then
+  echo "DATABASE_URL is not set"
+  echo "postgresql://$DATABASE_USERNAME:$DATABASE_PASSWORD@$DATABASE_HOST:$DATABASE_PORT/$DATABASE_DBNAME"
+  export DATABASE_URL="postgresql://$DATABASE_USERNAME:$DATABASE_PASSWORD@$DATABASE_HOST:$DATABASE_PORT/$DATABASE_DBNAME"
+fi
+
 prisma db push
 fastapi run main.py

@@ -11,8 +11,6 @@ dotenv.load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-  if os.environ.get('DATABASE_URL') is None and os.environ.get('DATABASE_USERNAME') is not None:
-    os.environ['DATABASE_URL'] = f"postgresql://{os.environ.get('DATABASE_USERNAME')}:{os.environ.get('DATABASE_PASSWORD')}@{os.environ.get('DATABASE_HOST')}:{os.environ.get('DATABASE_PORT')}/{os.environ.get('DATABASE_DBNAME')}"
   await prisma.connect()
   yield
   await prisma.disconnect()
